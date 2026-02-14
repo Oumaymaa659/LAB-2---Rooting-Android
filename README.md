@@ -48,12 +48,12 @@ Cela indique que le binaire su n’est pas installé sur l’AVD. Mon accès roo
 ![Journalisation](images/8.png)
 Le fichier logcat_root_check.txt contient les derniers messages du système et constitue une documentation de l’état du root et de la sécurité de l’AVD.
 ### Étape 2 — Fiche périmètre
-Documenter l'environnement cible avant toute action.
-*   **Cible :** AVD Pixel 4 (par exemple)
-*   **API Level :** Android 11 (API 30) ou plus récent
-*   **Architecture :** x86_64 (pour émulateur)
-*   **Type d'image :** Google APIs (non-Production, build `userdebug` si possible)
-*   **Outils installés :** Magisk Manager, Burp Suite (certificat CA).
+
+**Application :** Application Android test (version utilisée dans l’AVD).  
+**Support :** Android Virtual Device (AVD) via Android Studio.  
+**Objectif :** Comprendre le rooting Android et analyser ses impacts sur l’intégrité du système.  
+**Données utilisées :** Données fictives uniquement.  
+**Environnement réseau :** Réseau local de test (aucune interaction avec un environnement réel).
 
 ### Étape 3 — Démarrer un AVD propre
 Démarrer l'émulateur dans un état connu et stable.
