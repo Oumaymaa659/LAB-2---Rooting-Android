@@ -28,11 +28,24 @@ Ce laboratoire repose sur les outils standards de l'écosystème Android et du P
 L'objectif est d'obtenir les privilèges "SuperUser" (root) sur l'émulateur Android.
 *   **Méthode utilisée :** Utilisation de **Magisk** via le script **rootAVD**.
 *   **Pourquoi ?** Pour pouvoir inspecter les dossiers système, modifier les fichiers protégés et utiliser des outils d'analyse dynamique (ex: Frida) sans restrictions.
-*   **Commande clé :**
-    ```bash
-    ./rootAVD.sh List  # Lister les images disponibles
-    ./rootAVD.sh Install <ImageID> # Patch de l'image boot.img
-    ```
+
+#### 1. Vérification de l’AVD
+![Vérification de l’AVD](images/2.png)
+
+#### 2. Activation du mode root
+![Activation du mode root](images/3.png)
+
+#### 3. Vérification des privilèges root
+![Vérification des privilèges root](images/5.png)
+
+#### 4. Vérification de l’intégrité système
+![Vérification de l’intégrité système](images/6.png)
+
+#### 5. Test du binaire su
+![Test du binaire su](images/7.png)
+
+#### 6. Journalisation
+![Journalisation](images/8.png)
 
 ### Étape 2 — Fiche périmètre
 Documenter l'environnement cible avant toute action.
