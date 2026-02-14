@@ -64,9 +64,13 @@ La connexion ADB a été vérifiée avec la commande suivante :
 *   **Vérification :** `adb devices` doit lister l'appareil.
 ![Démarrer un AVD propre](images/2.png)
 
+
 ### Étape 4 — Installer et lancer l'app de test
 Dans cette étape, nous avons installé l'application **DIVA (Damn Insecure and Vulnerable App)** sur un émulateur Android pour commencer nos tests de sécurité.
 
+![Installer l'application](images/9.png)
+![Lancer l'application](images/10.png)
+![Application lancée](images/11.png)
 
 ### Étape 5 — Définir 3 scénarios simples
 Exemples de vecteurs d'attaque à tester dans ce laboratoire :
