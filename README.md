@@ -61,9 +61,6 @@ Dans cette étape, j’ai démarré un appareil virtuel (AVD) à l’aide d’An
 L’émulateur utilisé est basé sur Android 14 (API 34). Aucun compte personnel n’a été configuré et aucune application résiduelle n’était présente afin de garantir un environnement sain pour les tests de sécurité.
 
 La connexion ADB a été vérifiée avec la commande suivante :
-```bash
-emulator -avd <Nom_AVD> -writable-system -no-snapshot-load
-```
 *   **Vérification :** `adb devices` doit lister l'appareil.
 ![Démarrer un AVD propre](images/2.png)
 
