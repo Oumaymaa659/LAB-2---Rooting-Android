@@ -68,7 +68,6 @@ La connexion ADB a été vérifiée avec la commande suivante :
 Dans cette étape, nous avons installé l'application **DIVA (Damn Insecure and Vulnerable App)** sur un émulateur Android pour commencer nos tests de sécurité.
 
 
-
 ### Étape 5 — Définir 3 scénarios simples
 Exemples de vecteurs d'attaque à tester dans ce laboratoire :
 1.  **Contournement de la détection de Root :** L'app refuse-t-elle de se lancer sur un appareil rooté ?
