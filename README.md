@@ -56,12 +56,12 @@ Le fichier logcat_root_check.txt contient les derniers messages du système et c
 **Environnement réseau :** Réseau local de test (aucune interaction avec un environnement réel).
 
 ### Étape 3 — Démarrer un AVD propre
-Démarrer l'émulateur dans un état connu et stable.
-*   **Commande :**
-    ```bash
-    emulator -avd <Nom_AVD> -writable-system -no-snapshot-load
-    ```
-*   **Vérification :** `adb devices` doit lister l'appareil.
+Dans cette étape, j’ai démarré un appareil virtuel (AVD) à l’aide d’Android Studio afin de disposer d’un environnement de test propre et contrôlé.
+
+L’émulateur utilisé est basé sur Android 14 (API 34). Aucun compte personnel n’a été configuré et aucune application résiduelle n’était présente afin de garantir un environnement sain pour les tests de sécurité.
+
+La connexion ADB a été vérifiée avec la commande suivante :
+
 
 ### Étape 4 — Installer et lancer l'app de test
 Déploiement de l'application cible (ex: application vulnérable type *AndroGoat* ou *InsecureShop*).
