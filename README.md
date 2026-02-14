@@ -73,13 +73,7 @@ L’APK a été téléchargé depuis le dépôt GitHub et installé sur l’ému
 adb install "C:\Users\oumai\Downloads\diva-apk\DivaApplication.apk"
 
 ![Installer l'application](images/9.png)
-
-Le nom réel du package et la version de l’application sont essentiels pour la reproductibilité des tests.L’écran PowerShell avec les commandes pm list packages et dumpsys package affichant le package et la version.
-
 ![Lancer l'application](images/10.png)
-
-L’application DIVA fonctionne correctement sur l’émulateur.
-
 ![Application lancée](images/11.png)
 
 ### Étape 5 — Définir 3 scénarios simples
