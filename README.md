@@ -25,14 +25,14 @@ Ce laboratoire repose sur les outils standards de l'écosystème Android et du P
 ## 📋 Étapes du Laboratoire
 
 ### Étape 1 — Rooter l'AVD
-L'objectif est d'obtenir les privilèges "SuperUser" (root) sur l'émulateur Android.
-*   **Méthode utilisée :** Utilisation de **Magisk** via le script **rootAVD**.
-*   **Pourquoi ?** Pour pouvoir inspecter les dossiers système, modifier les fichiers protégés et utiliser des outils d'analyse dynamique (ex: Frida) sans restrictions.
-*   **Commande clé :**
-    ```bash
-    ./rootAVD.sh List  # Lister les images disponibles
-    ./rootAVD.sh Install <ImageID> # Patch de l'image boot.img
-    ```
+L’objectif de cette étape est de comprendre comment fonctionne l’accès root sur un appareil Android et d’observer l’impact sur l’intégrité du système. Pour cela, j’ai utilisé un Android Virtual Device (AVD), qui est un émulateur Android, afin de tester ces concepts dans un environnement sécurisé.
+1. Vérification de l’AVD
+2. Activation du mode root
+3. Vérification des privilèges root
+4. Vérification de l’intégrité système
+5. Test du binaire su
+6. Journalisation
+
 
 ### Étape 2 — Fiche périmètre
 Documenter l'environnement cible avant toute action.
