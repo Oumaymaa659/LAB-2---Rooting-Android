@@ -31,36 +31,39 @@ L’objectif de cette étape est de comprendre comment fonctionne l’accès roo
 
 #### 1. Vérification de l’AVD
 ![Vérification de l’AVD](images/2.png)
-
+Le terminal a affiché l’AVD actif comme emulator-5554 device, ce qui confirme que l’émulateur fonctionne correctement et que ADB peut communiquer avec lui.
 #### 2. Activation du mode root
 ![Activation du mode root](images/3.png)
-
+Cela signifie que le serveur ADB fonctionne désormais avec les privilèges administrateur, donnant un accès complet au système Android sur l’émulateur.
 #### 3. Vérification des privilèges root
 ![Vérification des privilèges root](images/5.png)
-
+Ce résultat confirme que j’ai bien les privilèges root dans le shell ADB (uid=0). Cela correspond à un accès administrateur complet sur l’AVD.
 #### 4. Vérification de l’intégrité système
 ![Vérification de l’intégrité système](images/6.png)
-
+Cela montre que dm-verity est actif, ce qui protège l’intégrité du système de fichiers, et que l’AVD ne simule pas complètement le mécanisme Android Verified Boot (AVB). Le root via ADB est actif, mais le bootloader est verrouillé et /system ne peut pas être modifié.
 #### 5. Test du binaire su
 ![Test du binaire su](images/7.png)
-
+Cela indique que le binaire su n’est pas installé sur l’AVD. Mon accès root est fourni uniquement via ADB (adb root) et non via une solution comme Magisk.
 #### 6. Journalisation
 ![Journalisation](images/8.png)
-
+Le fichier logcat_root_check.txt contient les derniers messages du système et constitue une documentation de l’état du root et de la sécurité de l’AVD.
 ### Étape 2 — Fiche périmètre
-Documenter l'environnement cible avant toute action.
-*   **Cible :** AVD Pixel 4 (par exemple)
-*   **API Level :** Android 11 (API 30) ou plus récent
-*   **Architecture :** x86_64 (pour émulateur)
-*   **Type d'image :** Google APIs (non-Production, build `userdebug` si possible)
-*   **Outils installés :** Magisk Manager, Burp Suite (certificat CA).
+
+**Application :** Application Android test (version utilisée dans l’AVD).  
+**Support :** Android Virtual Device (AVD) via Android Studio.  
+**Objectif :** Comprendre le rooting Android et analyser ses impacts sur l’intégrité du système.  
+**Données utilisées :** Données fictives uniquement.  
+**Environnement réseau :** Réseau local de test (aucune interaction avec un environnement réel).
 
 ### Étape 3 — Démarrer un AVD propre
-Démarrer l'émulateur dans un état connu et stable.
-*   **Commande :**
-    ```bash
-    emulator -avd <Nom_AVD> -writable-system -no-snapshot-load
-    ```
+Dans cette étape, j’ai démarré un appareil virtuel (AVD) à l’aide d’Android Studio afin de disposer d’un environnement de test propre et contrôlé.
+
+L’émulateur utilisé est basé sur Android 14 (API 34). Aucun compte personnel n’a été configuré et aucune application résiduelle n’était présente afin de garantir un environnement sain pour les tests de sécurité.
+
+La connexion ADB a été vérifiée avec la commande suivante :
+```bash
+emulator -avd <Nom_AVD> -writable-system -no-snapshot-load
+```
 *   **Vérification :** `adb devices` doit lister l'appareil.
 ![Démarrer un AVD propre](images/2.png)
 
