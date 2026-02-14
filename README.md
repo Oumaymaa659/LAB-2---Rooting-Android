@@ -62,6 +62,7 @@ Démarrer l'émulateur dans un état connu et stable.
     emulator -avd <Nom_AVD> -writable-system -no-snapshot-load
     ```
 *   **Vérification :** `adb devices` doit lister l'appareil.
+![Démarrer un AVD propre](images/2.png)
 
 ### Étape 4 — Installer et lancer l'app de test
 Déploiement de l'application cible (ex: application vulnérable type *AndroGoat* ou *InsecureShop*).
