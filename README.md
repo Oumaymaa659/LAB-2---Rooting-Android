@@ -70,7 +70,9 @@ Dans cette étape, nous avons installé l'application **DIVA (Damn Insecure and 
 L’APK a été téléchargé depuis le dépôt GitHub et installé sur l’émulateur via ADB :
 
 ![Installer l'application](images/9.png)
+L’écran PowerShell avec les commandes pm list packages et dumpsys package affichant le package et la version.
 ![Lancer l'application](images/10.png)
+L’application DIVA fonctionne correctement sur l’émulateur.
 ![Application lancée](images/11.png)
 
 ### Étape 5 — Définir 3 scénarios simples
