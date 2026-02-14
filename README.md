@@ -69,9 +69,6 @@ La connexion ADB a été vérifiée avec la commande suivante :
 Dans cette étape, nous avons installé l'application **DIVA (Damn Insecure and Vulnerable App)** sur un émulateur Android pour commencer nos tests de sécurité.
 L’APK a été téléchargé depuis le dépôt GitHub et installé sur l’émulateur via ADB :
 
-```bash
-adb install "C:\Users\oumai\Downloads\diva-apk\DivaApplication.apk"
-
 ![Installer l'application](images/9.png)
 ![Lancer l'application](images/10.png)
 ![Application lancée](images/11.png)
