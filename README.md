@@ -65,12 +65,13 @@ La connexion ADB a été vérifiée avec la commande suivante :
 ![Démarrer un AVD propre](images/2.png)
 
 ### Étape 4 — Installer et lancer l'app de test
-Déploiement de l'application cible (ex: application vulnérable type *AndroGoat* ou *InsecureShop*).
-*   **Commande :**
-    ```bash
-    adb install -r application-cible.apk
-    adb shell am start -n com.package.name/.MainActivity
-    ```
+Dans cette étape, nous avons installé l'application **DIVA (Damn Insecure and Vulnerable App)** sur un émulateur Android pour commencer nos tests de sécurité.
+### 1. Installation de l'APK
+L’APK a été téléchargé depuis le dépôt GitHub et installé sur l’émulateur via ADB :
+
+```bash
+adb install "C:\Users\oumai\Downloads\diva-apk\DivaApplication.apk"
+
 
 ### Étape 5 — Définir 3 scénarios simples
 Exemples de vecteurs d'attaque à tester dans ce laboratoire :
