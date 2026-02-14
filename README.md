@@ -72,6 +72,11 @@ L’APK a été téléchargé depuis le dépôt GitHub et installé sur l’ému
 ```bash
 adb install "C:\Users\oumai\Downloads\diva-apk\DivaApplication.apk"
 
+![Test du binaire su](images/9.png)
+
+![Test du binaire su](images/10.png)
+
+![Test du binaire su](images/11.png)
 
 ### Étape 5 — Définir 3 scénarios simples
 Exemples de vecteurs d'attaque à tester dans ce laboratoire :
