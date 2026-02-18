@@ -225,11 +225,18 @@ Dans un laboratoire de sécurité mobile, l’identification des risques est ess
 *   **Réseau non isolé** → Un laboratoire connecté au réseau principal peut impacter involontairement des systèmes externes.
 *   **Traçabilité insuffisante** → L’absence de journalisation ou de documentation empêche la reproduction ou l’audit des tests réalisés.
 
-### Étape 12 — Mesures défensives
-Comment les développeurs protègent leurs apps (et comment on apprend à les tester) :
-*   **Root Detection :** Vérification de la présence de binaires `su`.
-*   **SafetyNet / Play Integrity API :** Attestation côté serveur de l'intégrité de l'appareil.
-*   **Obfuscation :** (ProGuard/R8) pour compliquer le Reverse Engineering.
+### Étape 12 : Mesures défensives mises en place
+
+Afin de garantir un environnement de laboratoire sécurisé et maîtrisé, les mesures suivantes ont été appliquées :
+
+*   **Réseau isolé** → L’environnement de test est séparé du réseau principal afin d’éviter toute communication non contrôlée.
+*   **Données fictives uniquement** → Seules des données de test sont utilisées afin d’éliminer tout risque de fuite d’informations réelles.
+*   **Device / AVD dédié** → L’émulateur Android est utilisé exclusivement pour les tests de sécurité afin d’éviter tout mélange d’usages.
+*   **Snapshots ou wipe après test** → L’environnement est réinitialisé en fin de séance pour ne laisser aucune trace persistante.
+*   **Journal de configuration détaillé** → Toutes les configurations et modifications sont documentées afin d’assurer la reproductibilité des tests.
+*   **Aucun compte personnel utilisé** → Aucun identifiant personnel n’est configuré sur l’appareil de test afin d’éviter toute exposition involontaire.
+*   **Contrôle strict des APK installées** → Seules les applications nécessaires au laboratoire sont installées pour limiter la surface d’attaque.
+*   **Horodatage et captures d’écran** → Chaque étape importante est documentée avec date et preuve visuelle afin d’assurer une traçabilité complète.
 
 ### Étape 13 — OWASP MASVS
 Standard de vérification (Ce qu'il faut tester).
