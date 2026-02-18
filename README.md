@@ -158,15 +158,29 @@ L’**intégrité du système** protège Android contre les modifications non au
 Ces mécanismes fonctionnent ensemble pour limiter les risques même si une application est vulnérable.  
 Le rooting peut contourner certaines de ces protections en donnant un accès plus profond au système.
 
-### Étape 7 — Verified Boot (idée générale + check AVD)
-Le **Verified Boot** assure l'intégrité du logiciel de l'appareil au démarrage.
-*   **Sur un émulateur rooté :** Cette chaîne de confiance est nécessairement brisée ou désactivée pour permettre le chargement de composants modifiés (comme Magisk).
-*   **Indicateur :** Présence du message "Your device is corrupt" ou état `orange` au boot.
-*   **Vérification :**
-    ```bash
-    adb shell getprop ro.boot.verifiedbootstate
-    # Retourne souvent 'orange' ou 'red' après rooting
-    ```
+### Étape 7 : Verified Boot
+
+### Idée générale
+
+Verified Boot est un mécanisme de sécurité qui vérifie l’intégrité du système Android au moment du démarrage.  
+Son objectif principal est de garantir que le système qui démarre est bien celui prévu par le fabricant, sans modifications malveillantes.
+
+On peut comparer Verified Boot à un système d’alarme qui vérifie si quelqu’un a modifié les serrures ou les portes de la maison.  
+Si une modification est détectée, le système peut alerter l’utilisateur ou refuser de démarrer.
+
+---
+
+### Chain of Trust (Chaîne de confiance)
+
+La *chain of trust* est une série de vérifications où chaque composant vérifie l’authenticité du suivant avant de lui faire confiance.  
+C’est comme une chaîne de gardiens où chacun vérifie l’identité du suivant avant de le laisser passer.
+
+---
+
+### Pourquoi l’intégrité au démarrage est critique ?
+
+Si le processus de démarrage est compromis, toutes les protections de sécurité chargées ensuite peuvent être contournées.  
+C’est comme une forteresse dont la porte principale serait déjà ouverte : toutes les défenses internes deviennent inutiles.
 
 ### Étape 8 — AVB (Android Verified Boot)
 Mécanisme technique (basé sur `dm-verity`) qui vérifie l'intégrité des partitions (boot, system, vendor).
