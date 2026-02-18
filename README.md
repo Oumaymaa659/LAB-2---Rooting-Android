@@ -252,10 +252,15 @@ L’application ne doit jamais stocker ces informations en clair dans les fichie
 Toutes les communications réseau doivent utiliser TLS correctement configuré.  
 L’application doit vérifier les certificats du serveur afin d’éviter les attaques de type Man-in-the-Middle (MITM).
 
-### Étape 14 — OWASP MASTG
+### Étape 14 : OWASP MASTG
+
 Guide de test (Comment tester).
 *   **Référence :** **MASTG-TEST-0001** (Testing for Root Detection).
 *   Méthodologie pour identifier les checks anti-root et les contourner (Hooking via Frida).
+
+**Illustration de données sensibles récupérées :**
+
+![Données sensibles](images/15.png)
 
 ### Étape 15 — Commandes de rooting (rappel synthèse)
 Commandes ADB essentielles pour gérer l'accès root :
