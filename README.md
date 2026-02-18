@@ -314,10 +314,16 @@ whoami         # Doit retourner 'root'
 *   Certaines propriétés comme `ro.boot.verifiedbootstate` peuvent être vides sur AVD.
 *   Les résultats peuvent différer sur un appareil physique rooté ou non.
 
-### Étape 17 — Remise à zéro AVD
+### Étape 17 : Remise à zéro AVD
+
 Procédure pour nettoyer l'émulateur après le lab.
 *   Dans AVD Manager : Action > **Wipe Data**.
 *   Permet de repartir sur une base saine pour le prochain audit.
+
+**Illustration :**
+
+![Wipe Data 1](images/16.png)
+![Wipe Data 2](images/17.png)
 
 ### Étape 18 — Remise à zéro device labo
 (Si appareil physique utilisé)
