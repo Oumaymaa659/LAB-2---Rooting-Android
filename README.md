@@ -329,11 +329,15 @@ Procédure pour nettoyer l'émulateur après le lab.
 (Si appareil physique utilisé)
 *   Flasher la **Factory Image** officielle via Fastboot pour supprimer toute trace de modification et reverrouiller le chargeur de démarrage (Bootloader Lock).
 
-### Étape 19 — Livrables
-Ce qui doit être rendu à la fin du laboratoire :
-1.  Rapport d'audit (PDF).
-2.  Preuves de concept (Screenshots, scripts Frida).
-3.  Fiche de synthèse des vulnérabilités trouvées.
+### Étape 19 : Livrables – Synthèse
+
+*   **Rooting :** Définition en 4 phrases (accès root, usage labo, risques sur appareil réel).
+*   **Schéma Verified Boot / AVB :** Chaîne de confiance simple (Bootloader → Kernel → System → Apps).
+*   **8 risques + 8 mesures défensives :** Tableau avec risque d’un côté, mesure correspondante de l’autre.
+*   **MASVS – 2 exigences :** STOCKAGE sécurisé (données sensibles chiffrées) et NETWORK sécurisé (TLS + vérif certifs).
+*   **MASTG – 2 idées de tests :** Vérifier SharedPreferences pour données sensibles, analyser `adb logcat` pour fuites.
+*   **Fiche environnement :** Auteur, AVD utilisé, version Android/API, app + version, 3 scénarios, observations, limites, reset effectué.
+*   **Checklist reset + preuves :** Capture écran de l’AVD remis à zéro, preuve des commandes/wipe.
 
 ### Étape 20 — Checklist finale
 - [ ] AVD rooté et fonctionnel.
