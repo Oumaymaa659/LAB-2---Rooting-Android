@@ -76,10 +76,78 @@ L’application DIVA fonctionne correctement sur l’émulateur.
 ![Application lancée](images/11.png)
 
 ### Étape 5 — Définir 3 scénarios simples
-Exemples de vecteurs d'attaque à tester dans ce laboratoire :
-1.  **Contournement de la détection de Root :** L'app refuse-t-elle de se lancer sur un appareil rooté ?
-2.  **Extraction de données locales :** Trouver des clés API ou mots de passe dans `/data/data/<package>/`.
-3.  **Analyse du trafic réseau :** Interception HTTPS (Man-in-the-Middle) malgré le SSL Pinning.
+
+Dans cette étape, nous avons défini trois scénarios simples pour l’application **DIVA**, afin de tester les fonctionnalités principales de manière répétable et documentée. Chaque scénario est accompagné de captures d’écran pour la vérification.
+
+---
+
+### Scénario 1 : Ouvrir l’écran d’accueil
+
+**Objectif :** Vérifier que DIVA se lance correctement et que l’écran principal est fonctionnel.
+
+**explication :**  
+Ce test de fumée (smoke test) garantit que l'environnement d'exécution (AVD) et l'application sont correctement configurés. Si l'application crashe au démarrage, aucun autre test de sécurité ne peut être effectué fiable.
+
+**Étapes :**
+1. Ouvrir l’émulateur Android.  
+2. Cliquer sur l’icône **DIVA** pour lancer l’application.  
+3. Observer l’écran d’accueil et vérifier que les menus et boutons principaux sont visibles et cliquables.
+
+**Résultat attendu :**
+- L’écran principal s’affiche correctement.
+- Aucun crash ou message d’erreur.
+
+**Captures d’écran :**
+![Écran d'accueil](images/12.png)
+
+---
+
+### Scénario 2 : Naviguer dans un module principal (Login)
+
+**Objectif :** Vérifier que le module Login fonctionne correctement.
+
+**explication :**  
+Le mécanisme d'authentification est une surface d'attaque critique. Avant de tenter de le contourner ou de l'attaquer, il est essentiel de comprendre son fonctionnement nominal (happy path).
+
+**Étapes :**
+1. Depuis l’écran d’accueil, cliquer sur le bouton **Login**.  
+2. Remplir les champs avec des données fixes :  
+   - `username` : test  
+   - `password` : test  
+3. Cliquer sur **Submit / Login**.  
+
+**Résultat attendu :**
+- La page suivante s’affiche correctement ou un message de succès/erreur apparaît.  
+- Aucun crash.
+
+**Captures d’écran :**
+![Login Module](images/13.png)
+
+---
+
+### Scénario 3 : Test d’injection SQL dans le module Login
+
+**Objectif :**  
+Tester la présence d’une vulnérabilité de type SQL Injection dans le module Login de l’application DIVA.
+
+**explication :**  
+L'injection SQL est une vulnérabilité classique où l'attaquant manipule la requête SQL backend via les entrées utilisateur. Ici, nous tentons de contourner l'authentification en injectant une condition toujours vraie (`' OR '1'='1`).
+
+### Étapes réalisées :
+
+1. Ouvrir l’application DIVA.
+2. Cliquer sur le module **Login**.
+3. Dans le champ `username`, saisir exactement : `' OR '1'='1`
+4. Dans le champ `password`, saisir : `n'importe quoi`
+5. Cliquer sur **Login / Submit**.
+
+### Résultat observé :
+
+- L’application affiche des informations sensibles stockées dans la base de données.
+- Les données affichées incluent souvent la liste des utilisateurs enregistrés ou un message confirmant l'accès administrateur, prouvant que la requête SQL a été altérée avec succès.
+
+**Captures d’écran :**
+![Résultat Injection SQL](images/14.png)
 
 ### Étape 6 — Lire Android Security
 Se référer à la documentation officielle pour comprendre le modèle de sécurité.
