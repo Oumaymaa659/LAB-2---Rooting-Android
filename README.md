@@ -238,10 +238,19 @@ Afin de garantir un environnement de laboratoire sécurisé et maîtrisé, les m
 *   **Contrôle strict des APK installées** → Seules les applications nécessaires au laboratoire sont installées pour limiter la surface d’attaque.
 *   **Horodatage et captures d’écran** → Chaque étape importante est documentée avec date et preuve visuelle afin d’assurer une traçabilité complète.
 
-### Étape 13 — OWASP MASVS
-Standard de vérification (Ce qu'il faut tester).
-*   **Référence :** **MASVS-RESILIENCE** (Resilience Against Reverse Engineering and Tampering).
-*   *Exemple :* "L'application détecte, et répond à, la présence d'un appareil rooté."
+### Étape 13 : Référence au standard OWASP MASVS
+
+Le OWASP MASVS (Mobile Application Security Verification Standard) est un standard de sécurité qui définit les exigences qu’une application mobile doit respecter pour être considérée comme sécurisée.
+
+**Exigence 1 – STORAGE-1**
+
+Les données sensibles (mots de passe, tokens, clés API, numéros de carte, etc.) doivent être stockées de manière sécurisée en utilisant des mécanismes de chiffrement appropriés.  
+L’application ne doit jamais stocker ces informations en clair dans les fichiers locaux, bases SQLite ou SharedPreferences.
+
+**Exigence 2 – NETWORK-1**
+
+Toutes les communications réseau doivent utiliser TLS correctement configuré.  
+L’application doit vérifier les certificats du serveur afin d’éviter les attaques de type Man-in-the-Middle (MITM).
 
 ### Étape 14 — OWASP MASTG
 Guide de test (Comment tester).
