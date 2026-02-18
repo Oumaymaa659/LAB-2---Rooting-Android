@@ -189,10 +189,16 @@ AVB (Android Verified Boot 2.0) est une version moderne de Verified Boot qui vé
 Il ajoute une vérification d’intégrité plus flexible (basée sur des signatures et métadonnées) ainsi qu’une protection anti-rollback.
 La protection anti-rollback empêche l’installation d’anciennes versions vulnérables du système, comme empêcher quelqu’un de remplacer une serrure sécurisée par une ancienne plus facile à forcer.
 
-### Étape 9 — Définir le rooting
-**Rooter** signifie obtenir l'accès au compte utilisateur `root` (UID 0) sur le système Linux sous-jacent d'Android.
-*   **Implications :** Contrôle total du matériel et du logiciel.
-*   **Risque :** Brise le modèle de sécurité (Sandbox) ; une app malveillante root peut tout voler.
+### Étape 9 : Définir le rooting
+
+Le rooting consiste à obtenir les privilèges super-utilisateur (root) sur Android, ce qui donne un contrôle total sur le système.  
+Cela modifie les mécanismes de protection et le modèle de confiance du système, notamment Verified Boot et l’isolation standard.  
+En laboratoire, le root est utile pour observer des comportements avancés et analyser la sécurité en profondeur.  
+Cependant, il est risqué : il nécessite un environnement isolé, une bonne traçabilité des actions et un reset après les tests.
+
+**Analogie :** Le rooting, c’est comme avoir un passe-partout pour toutes les portes d’un bâtiment. Très utile pour la maintenance, mais dangereux s’il est mal utilisé.
+
+**Contexte historique :** Le terme root vient d’UNIX, où l’administrateur s’appelle "root". Android étant basé sur Linux, obtenir le root signifie devenir cet administrateur tout-puissant.
 
 ### Étape 10 — Intérêt labo (non opérationnel)
 Pourquoi faire cela en Lab ?
