@@ -200,10 +200,15 @@ Cependant, il est risqué : il nécessite un environnement isolé, une bonne tra
 
 **Contexte historique :** Le terme root vient d’UNIX, où l’administrateur s’appelle "root". Android étant basé sur Linux, obtenir le root signifie devenir cet administrateur tout-puissant.
 
-### Étape 10 — Intérêt labo (non opérationnel)
-Pourquoi faire cela en Lab ?
-*   Observer le comportement réel du système sans risquer un appareil physique personnel.
-*   Comprendre les empreintes laissées par le root (fichiers `su`, packages `com.topjohnwu.magisk`).
+### Étape 10 : Intérêt du laboratoire
+
+En laboratoire autorisé uniquement, un environnement privilégié peut aider à :
+
+*   Observer des artefacts système normalement inaccessibles
+*   Analyser les comportements runtime de l’application à bas niveau
+*   Tester la robustesse du stockage face à un attaquant privilégié
+
+Par exemple, avec les privilèges root, il est possible d’examiner comment une application stocke ses données sensibles. Cela permet de vérifier si elle se repose uniquement sur la protection du système (mauvaise pratique) ou si elle implémente son propre chiffrement (bonne pratique).
 
 ### Étape 11 — Matrice de risques
 Évaluation des risques liés à l'exécution d'applications sur un appareil rooté.
