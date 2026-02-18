@@ -149,10 +149,14 @@ L'injection SQL est une vulnérabilité classique où l'attaquant manipule la re
 **Captures d’écran :**
 ![Résultat Injection SQL](images/14.png)
 
-### Étape 6 — Lire Android Security
-Se référer à la documentation officielle pour comprendre le modèle de sécurité.
-*   **Source :** [Android Security and Privacy](https://source.android.com/security)
-*   **Concepts clés :** Sandbox applicative, UIDs, Permissions, SELinux.
+### Étape 6 : Résumé de la sécurité Android
+
+La sécurité Android repose sur plusieurs couches de protection.  
+Le **sandboxing** isole chaque application pour qu’elle ne puisse pas accéder aux données des autres apps.  
+Le **modèle de permissions** oblige les applications à demander l’autorisation avant d’accéder aux ressources sensibles (caméra, contacts, stockage).  
+L’**intégrité du système** protège Android contre les modifications non autorisées.  
+Ces mécanismes fonctionnent ensemble pour limiter les risques même si une application est vulnérable.  
+Le rooting peut contourner certaines de ces protections en donnant un accès plus profond au système.
 
 ### Étape 7 — Verified Boot (idée générale + check AVD)
 Le **Verified Boot** assure l'intégrité du logiciel de l'appareil au démarrage.
