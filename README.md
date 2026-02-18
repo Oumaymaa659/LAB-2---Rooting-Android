@@ -271,11 +271,48 @@ su             # Dans le shell, passe en root (nécessite Magisk/SuperSU)
 whoami         # Doit retourner 'root'
 ```
 
-### Étape 16 — Traçabilité : fiche environnement
-Garder une trace de l'état du lab pour la reproductibilité.
-*   Noter la version de Magisk.
-*   Noter le hash de l'APK testé.
-*   Captures d'écran des configurations réussies.
+### Étape 16 : Traçabilité – Fiche environnement
+
+**Auteur / Date**
+
+*   **Auteur :** Oumaima Benhilal
+*   **Date :** 14/02/2026
+
+**Support**
+
+*   **Device / AVD :** Pixel 6 (API 34, Android Studio)
+
+**Version Android / API**
+
+*   **Android 13, API Level 34**
+
+**Application testée**
+
+*   **Nom :** DIVA
+*   **Version :** 1.0
+
+**3 scénarios réalisés**
+
+1.  **Écran d’accueil**
+    *   Vérification que l’application s’ouvre correctement et que les boutons principaux sont visibles.
+2.  **Module Login simple**
+    *   Test de login avec identifiants de test : `username=test`, `password=test`.
+3.  **Injection SQL**
+    *   Saisie : `username=' OR '1'='1` et `password=test` → récupération de données sensibles simulées.
+
+**Observations factuelles**
+
+*   L’application s’ouvre sans crash.
+*   Les scénarios 1 et 2 fonctionnent comme prévu.
+*   Injection SQL (scénario 3) montre que DIVA est vulnérable volontairement pour l’apprentissage.
+*   Les fichiers de l’application sont accessibles uniquement avec privilèges root.
+*   Les logs révèlent certaines informations sensibles lors des tests root.
+
+**Limites**
+
+*   Tests réalisés uniquement sur AVD / device labo, pas sur appareil personnel.
+*   Certaines propriétés comme `ro.boot.verifiedbootstate` peuvent être vides sur AVD.
+*   Les résultats peuvent différer sur un appareil physique rooté ou non.
 
 ### Étape 17 — Remise à zéro AVD
 Procédure pour nettoyer l'émulateur après le lab.
