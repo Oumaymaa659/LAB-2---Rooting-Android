@@ -210,14 +210,20 @@ En laboratoire autorisé uniquement, un environnement privilégié peut aider à
 
 Par exemple, avec les privilèges root, il est possible d’examiner comment une application stocke ses données sensibles. Cela permet de vérifier si elle se repose uniquement sur la protection du système (mauvaise pratique) ou si elle implémente son propre chiffrement (bonne pratique).
 
-### Étape 11 — Matrice de risques
-Évaluation des risques liés à l'exécution d'applications sur un appareil rooté.
+### Étape 11 : Identification des risques
 
-| Menace | Impact | Probabilité (Si rooté) |
-| :--- | :--- | :--- |
-| Vol de données bancaires | Critique | Élevée |
-| Installation de Keylogger | Critique | Élevée |
-| Modification du système | Majeur | Très Élevée |
+Dans un laboratoire de sécurité mobile, l’identification des risques est essentielle afin de garantir des tests fiables, reproductibles et conformes aux bonnes pratiques de cybersécurité.
+
+**Risques identifiés**
+
+*   **Intégrité non garantie** → Un système modifié peut produire des conclusions biaisées sur le niveau réel de sécurité d’une application.
+*   **Surface d’attaque accrue hors laboratoire** → Si l’appareil sort du cadre contrôlé, il peut être exposé à des menaces externes supplémentaires.
+*   **Exposition de données sensibles** → La présence de données réelles sur un appareil compromis peut entraîner une violation de confidentialité.
+*   **Instabilité du système** → Un environnement rooté ou modifié peut provoquer des comportements imprévisibles, rendant les tests non reproductibles.
+*   **Mélange comptes personnels et comptes de test** → L’utilisation d’identifiants personnels peut conduire à une fuite involontaire d’informations sensibles.
+*   **Mauvais nettoyage en fin de séance** → L’absence de suppression des données de test peut entraîner une persistance d’informations sensibles.
+*   **Réseau non isolé** → Un laboratoire connecté au réseau principal peut impacter involontairement des systèmes externes.
+*   **Traçabilité insuffisante** → L’absence de journalisation ou de documentation empêche la reproduction ou l’audit des tests réalisés.
 
 ### Étape 12 — Mesures défensives
 Comment les développeurs protègent leurs apps (et comment on apprend à les tester) :
