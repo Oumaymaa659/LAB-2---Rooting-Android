@@ -183,10 +183,11 @@ C’est comme une chaîne de gardiens où chacun vérifie l’identité du suiva
 Si le processus de démarrage est compromis, toutes les protections de sécurité chargées ensuite peuvent être contournées.  
 C’est comme une forteresse dont la porte principale serait déjà ouverte : toutes les défenses internes deviennent inutiles.
 
-### Étape 8 — AVB (Android Verified Boot)
-Mécanisme technique (basé sur `dm-verity`) qui vérifie l'intégrité des partitions (boot, system, vendor).
-*   Structure `vbmeta` : Contient les hachages pour la vérification.
-*   **Impact du Lab :** Pour rooter, nous devons souvent désactiver la vérification (disable-verity) ou signer une image modifiée avec une clé personnalisée.
+### Étape 8 : AVB (Android Verified Boot 2.0)
+
+AVB (Android Verified Boot 2.0) est une version moderne de Verified Boot qui vérifie l’intégrité cryptographique du système au démarrage pour empêcher toute modification non autorisée.
+Il ajoute une vérification d’intégrité plus flexible (basée sur des signatures et métadonnées) ainsi qu’une protection anti-rollback.
+La protection anti-rollback empêche l’installation d’anciennes versions vulnérables du système, comme empêcher quelqu’un de remplacer une serrure sécurisée par une ancienne plus facile à forcer.
 
 ### Étape 9 — Définir le rooting
 **Rooter** signifie obtenir l'accès au compte utilisateur `root` (UID 0) sur le système Linux sous-jacent d'Android.
