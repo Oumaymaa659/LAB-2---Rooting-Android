@@ -19,7 +19,8 @@ Ce laboratoire repose sur les outils standards de l'écosystème Android et du P
 
 *   **Android Studio** (Gestionnaire AVD)
 *   **ADB** (Android Debug Bridge)
-*   **AVD** (émulateur Android) 
+*   **AVD** (émulateur Android)
+*   **DIVA**
 
 
 ---
